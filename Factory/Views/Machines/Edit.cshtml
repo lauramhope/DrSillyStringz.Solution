@@ -4,7 +4,7 @@
 
 @model Factory.Models.Machine
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" id="views">
   <h4>Edit this machine: @Html.DisplayFor(model => model.MachineName)</h4>
 
   <p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>

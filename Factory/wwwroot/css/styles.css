@@ -39,3 +39,12 @@ nav {
 	background-color: aliceblue;
 	width: 50%; 
 }
+
+#home h1 {
+	text-align: center;
+}
+
+#views {
+	background-color: aliceblue;
+	width: 50%; 
+}

@@ -4,7 +4,7 @@
 
 @model Factory.Models.Engineer
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" id="views">
   <h4>Edit this engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
   <p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>

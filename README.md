@@ -1,6 +1,6 @@
 # DrSillyStringz.Solution_
 
-#### _MVC web application to manage engineers and machines
+#### _MVC web application to manage engineers and machines_
 
 #### By **Laura Hope**
 
@@ -16,7 +16,7 @@
 
 ## Description
 
-_This application showcases using EFCore and MySQL to create and link database schemas to the project models. Databases are generated via migrations using the command line. Application uses HTML helper methods, LINQ commands, and navigation properties to allow the owner of Dr. Sillystringz to add engineers and machiness and link these via many-to-many relationships._
+_This application showcases using EFCore and MySQL to create and link database schemas to the project models. Databases are generated via migrations using the command line. Application uses HTML helper methods, LINQ commands, and navigation properties to allow the owner of Dr. Sillystringz to add engineers and machines and link these via many-to-many relationships._
 
 ## Setup/Installation Requirements
 
