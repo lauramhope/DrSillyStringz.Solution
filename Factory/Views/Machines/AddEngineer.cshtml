@@ -4,20 +4,20 @@
 
 @model Factory.Models.Machine
 
-@* <h2>Add student</h2>
+<h2>Add Engineer</h2>
 
-<h3>Add a student to this course: @Html.DisplayFor(model => model.CourseName)</h3>
+<h3>Add an engineer to this machine: @Html.DisplayFor(model => model.MachineName)</h3>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CourseId)
+  @Html.HiddenFor(model => model.MachineId)
 
   <div class="form-group">
-    @Html.Label("Select a student")
-    @Html.DropDownList("StudentId")
+    @Html.Label("Select an engineer:")
+    @Html.DropDownList("EngineerId")
   </div>
 
-  <input type="submit" value="Add Student" class="btn btn-primary" />
+  <input type="submit" value="Add Engineer" class="btn btn-primary" />
 }
 
-  @Html.ActionLink("Back to List", "Index") *@
+  @Html.ActionLink("Back to List", "Index")
