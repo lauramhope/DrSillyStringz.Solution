@@ -6,28 +6,28 @@
 @using Factory.Models;
 @using System.Collections.Generic;
 
-@* <h2>Course Details</h2>
+<h2>Machine Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
-<h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)</h3>
+<h3>@Html.DisplayNameFor(model => model.MachineName): @Html.DisplayFor(model => model.MachineName)</h3>
+@* <h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)</h3> *@
 
 @if (Model.JoinEntities.Count == 0)
 {
-  <p>This course does not have any students</p>
+  <p>This machine does not have any engineers assigned yet</p>
 }
 else
 {
-  <h4>Students attending this class:</h4>
+  <h4>Engineers assigned to this machine:</h4>
   <ul>
-  @foreach (CourseStudent join in Model.JoinEntities)
+  @foreach (EngineerMachine join in Model.JoinEntities)
   {
-    <li>@Html.ActionLink($"{join.Student.StudentName}", "Details", "Students", new { id = join.Student.StudentId})</li>
+    <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId})</li>
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Back to courses", "Index")</p>
-<p>@Html.ActionLink("Add a Student for this Course", "AddStudent", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Add new student", "Create", "Students")</p> *@
+<p>@Html.ActionLink("Back to machines", "Index")</p>
+<p>@Html.ActionLink("Assign an engineer to this machine", "AddEngineer", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Edit machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete machine", "Delete", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Add new engineer", "Create", "Engineers")</p>

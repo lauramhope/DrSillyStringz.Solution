@@ -4,18 +4,18 @@
 
 @model Factory.Models.Machine
 
-@* <h4>Edit this course: @Html.DisplayFor(model => model.CourseName)</h4>
+<h4>Edit this machine: @Html.DisplayFor(model => model.MachineName)</h4>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CourseId)
+  @Html.HiddenFor(model => model.MachineId)
 
-  @Html.LabelFor(model => model.CourseName)
+  @Html.LabelFor(model => model.MachineName)
   @Html.EditorFor(model => model.CourseName)
 
-  @Html.LabelFor(model => model.CourseNumber)
-  @Html.EditorFor(model => model.CourseNumber)
+  @* @Html.LabelFor(model => model.CourseNumber)
+  @Html.EditorFor(model => model.CourseNumber) *@
 
   <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p> *@
+<p>@Html.ActionLink("Back to list", "Index")</p>
