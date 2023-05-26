@@ -1,25 +1,88 @@
+# DrSillyStringz.Solution_
 
+#### _MVC web application to manage engineers and machines
 
-### Install Tools
+#### By **Laura Hope**
 
-Install the tools that are introduced in [this series of lessons on LearnHowToProgram.com](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
+## Technologies Used
 
-### Set Up and Run Project
+* _C#_
+* _.NET v6.0_
+* _MySQLWorkbench_
+* _MS EntityFrameworkCore v6.0.0_
+* _Pomelo EntityFrameworkCore MySQL v6.0.0_
+* _Git_
+* _VSCode_
 
-1. Clone this repo.
-2. Open the terminal and navigate to this project's production directory called "ToDoList".
-3. Within the production directory "ToDoList", create a new file called `appsettings.json`.
-4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
+## Description
 
-```json
+_This application showcases using EFCore and MySQL to create and link database schemas to the project models. Databases are generated via migrations using the command line. Application uses HTML helper methods, LINQ commands, and navigation properties to allow the owner of Dr. Sillystringz to add engineers and machiness and link these via many-to-many relationships._
+
+## Setup/Installation Requirements
+
+**Project Set-Up**
+* _Clone "DrSillyStringz.Solution“ from the repository to your desktop_
+* _Navigate to "DrSillyStringz.Solution" directory via your local terminal command line_
+* _Create a file ".gitignore" in the "DrSillyStringz.Solution" directory_
+```
+$ touch .gitignore
+```
+* _Copy/paste the following in the .gitignore file:_
+```
+obj
+bin
+appsettings.json
+```
+* _Navigate to the production directory "Factory"_
+* _Create a file within the "Factory" folder titled "appsettings.json"_
+```
+$ touch appsettings.json
+```
+* _Navigate to the appsettings.json file and copy/paste the following text within the file:_
+```
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=to_do_list_with_many_to_many;uid=root;pwd=epicodus;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=dr_silly_stringz;uid=[USER-ID];pwd=[USER-PW];"
   }
 }
 ```
+* _Remove the square brackets and replace **USER-ID** and **USER-PW** with your own ID and password_
+* _Navigate to the command line within the "Factory" folder and execute command "dotnet build"_
+* _To update the migrations database, type command "dotnet ef database update"_
+* _Add the EF Core packages by typing the following into the command line:_
+```
+$ dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0
+$ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
+```
+* _Return to the command line and type "dotnet watch run" - this should automatically open a browser to the LocalHost:5000 or LocalHost:5001_
+* _This is where you can interact with the application via entering engineers, machines, etc._
 
-5. Create the database using the migrations in the To Do List project. Open your shell (e.g., Terminal or GitBash) to the production directory "ToDoList", and run `dotnet ef database update`. 
-    - To optionally create a migration, run the command `dotnet ef migrations add MigrationName` where `MigrationName` is your custom name for the migration in UpperCamelCase. To learn more about migrations, visit the LHTP lesson [Code First Development and Migrations](https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations).
-6. Within the production directory "ToDoList", run `dotnet watch run` in the command line to start the project in development mode with a watcher.
-4. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/lessons/redirecting-to-https-and-issuing-a-security-certificate).
+## Known Bugs
+
+* _No known bugs as of 5/26/23_
+
+## License
+
+MIT License
+
+Copyright (c) [2023] [Laura Hope]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+_If you run into any issues or have questions, ideas or concerns, please reach out to me via email: lauramhope.dpt@gmail.com.  Contributions to the code are highly encouraged._
