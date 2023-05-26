@@ -6,16 +6,17 @@
 
 <h4>Edit this machine: @Html.DisplayFor(model => model.MachineName)</h4>
 
+<p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.MachineNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
-
-  @Html.LabelFor(model => model.MachineName)
-  @Html.EditorFor(model => model.MachineName)
-
-  @Html.LabelFor(model => model.MachineNumber)
-  @Html.EditorFor(model => model.MachineNumber)
-
+  <p>Machine Name: @Html.EditorFor(model => model.MachineName)</p>
+  <p>Machine Number:  @Html.EditorFor(model => model.MachineNumber)</p>
+    
   <input type="submit" value="Save" />
 }
+
 <p>@Html.ActionLink("Back to list", "Index")</p>

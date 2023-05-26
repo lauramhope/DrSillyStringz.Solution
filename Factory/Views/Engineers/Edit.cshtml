@@ -6,19 +6,19 @@
 
 <h4>Edit this engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
 
+<p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.EngineerLicense, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.EngineerSpecialty, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
-
-  @Html.LabelFor(model => model.EngineerName)
-  @Html.EditorFor(model => model.EngineerName)
-
-  @Html.LabelFor(model => model.EngineerLicense)
-  @Html.EditorFor(model => model.EngineerLicense)
-
-  @Html.LabelFor(model => model.EngineerSpecialty)
-  @Html.EditorFor(model => model.EngineerSpecialty)
-
+  <p>Name: @Html.EditorFor(model => model.EngineerName)</p>
+  <p>License:  @Html.EditorFor(model => model.EngineerLicense)</p>
+  <p>Specialty: @Html.EditorFor(model => model.EngineerSpecialty)</p>
+    
   <input type="submit" value="Save" />
 }
 

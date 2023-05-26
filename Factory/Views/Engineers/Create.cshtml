@@ -5,23 +5,22 @@
 @model Factory.Models.Engineer
 
 <h4>Add a new engineer</h4>
+<hr />
 
 <p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.EngineerName)
-  @Html.TextBoxFor(model => model.EngineerName)
+  <p>Engineer Name: @Html.TextBoxFor(model => model.EngineerName, new { required = "required" })</p>
   
-  @Html.LabelFor(model => model.EngineerLicense)
-  @Html.TextBoxFor(model => model.EngineerLicense)
- 
-  @Html.LabelFor(model => model.EngineerSpecialty)
-  @Html.TextBoxFor(model => model.EngineerSpecialty)
- 
-  @Html.LabelFor(model => model.MachineId)
-  @Html.DropDownListFor(model => model.MachineId, ViewBag.MachineId as SelectList, "Select a machine")
 
-  <input type="submit" value="Add new engineer" class="btn btn-primary" />
+  <p>Engineer License Number: @Html.TextBoxFor(model => model.EngineerLicense, new { required = "required" })</p>
+  
+
+  <p>Engineer Specialty: @Html.TextBoxFor(model => model.EngineerSpecialty, new { required = "required" })</p>
+    
+
+  <input type="submit" value="Add new engineer"/>
 }
-<p>@Html.ActionLink("Show all Engineers", "Index")</p>
+<br>
+<p>@Html.ActionLink("Show all engineers", "Index")</p>
