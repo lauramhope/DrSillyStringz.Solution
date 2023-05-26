@@ -4,8 +4,18 @@
 	left:0px;
 	width: 100%;
 	color:#CCC;
-	background:#333;
+	background:#7c0674;
 	padding:8px;
+}
+
+body {
+	background-image: url("./machine.jpg");
+	opacity: 0.84;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: auto;
+	background-attachment: fixed;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #footer p {
@@ -22,4 +32,10 @@ nav {
 
 .text-white {
 	text-align: center;
+}
+
+#home {
+	text-align: center;
+	background-color: aliceblue;
+	width: 50%; 
 }

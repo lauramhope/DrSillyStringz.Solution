@@ -4,16 +4,20 @@ Layout = "_Layout";
 
 @model Factory.Models.Engineer
 
-<h2>Add Machine</h2>
+<div class="card" style="width: 18rem;">
+  <h2>Add Machine</h2>
 
-@using (Html.BeginForm())
-{
-@Html.HiddenFor(model => model.EngineerId)
+  @using (Html.BeginForm())
+  {
+  @Html.HiddenFor(model => model.EngineerId)
 
-@Html.Label("Machine")
-@Html.DropDownList("MachineId")
+  @Html.Label("Machine")
+  @Html.DropDownList("MachineId")
+  <br />
 
-<input type="submit", value="Add"/>
-}
+  <input type="submit", value="Add"/>
+  }
 
-<p>@Html.ActionLink("Back to List", "Index")
+  <p>@Html.ActionLink("Back to List", "Index")</p>
+</div>
+```

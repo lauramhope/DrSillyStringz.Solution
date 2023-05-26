@@ -5,29 +5,32 @@
 @using Factory.Models
 @model Factory.Models.Engineer
 
-<h2>Engineer Details</h2>
-<hr />
-<h3>Name: @Html.DisplayFor(model => model.EngineerName)</h3>
-<h4>License Number: @Html.DisplayFor(model => model.EngineerLicense)</h4> 
-<h4>Specialty: @Html.DisplayFor(model => model.EngineerSpecialty)</h4>
+<div class="card" style="width: 18rem;">
+  <h2>Engineer Details</h2>
+  <hr />
+  <h3>Name: @Html.DisplayFor(model => model.EngineerName)</h3>
+  <h4>License Number: @Html.DisplayFor(model => model.EngineerLicense)</h4> 
+  <h4>Specialty: @Html.DisplayFor(model => model.EngineerSpecialty)</h4>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This engineer has not been assigned to any machines yet!</p>
-}
-else
-{
-  <h4>This engineer has been assigned to the following machines:</h4>
-  <ul>
-    @foreach(EngineerMachine join in Model.JoinEntities)
-    {
-      <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId})</li>
-    }
-  </ul>
-}
+  @if(@Model.JoinEntities.Count == 0)
+  {
+    <p>This engineer has not been assigned to any machines yet!</p>
+  }
+  else
+  {
+    <h4>This engineer has been assigned to the following machines:</h4>
+    <ul>
+      @foreach(EngineerMachine join in Model.JoinEntities)
+      {
+        <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId})</li>
+      }
+    </ul>
+  }
 
-<p>@Html.ActionLink("Back to engineers", "Index")</p>
-<p>@Html.ActionLink("Add a machine for this engineer", "AddMachine", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Edit engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add new machine", "Create", "Machines")</p>
+  <p>@Html.ActionLink("Back to engineers", "Index")</p>
+  <p>@Html.ActionLink("Add a machine for this engineer", "AddMachine", new { id = Model.EngineerId })</p>
+  <p>@Html.ActionLink("Edit engineer", "Edit", new { id = Model.EngineerId })</p>
+  <p>@Html.ActionLink("Delete engineer", "Delete", new { id = Model.EngineerId })</p>
+  <p>@Html.ActionLink("Add new machine", "Create", "Machines")</p>
+</div>
+```

@@ -4,23 +4,25 @@
 
 @model Factory.Models.Engineer
 
-<h4>Add a new engineer</h4>
-<hr />
+<div class="card" style="width: 18rem;">
+  <h4>Add a new engineer</h4>
+  <hr />
 
-<p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+  <p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-@using (Html.BeginForm())
-{
-  <p>Engineer Name: @Html.TextBoxFor(model => model.EngineerName, new { required = "required" })</p>
-  
-
-  <p>Engineer License Number: @Html.TextBoxFor(model => model.EngineerLicense, new { required = "required" })</p>
-  
-
-  <p>Engineer Specialty: @Html.TextBoxFor(model => model.EngineerSpecialty, new { required = "required" })</p>
+  @using (Html.BeginForm())
+  {
+    <p>Engineer Name: @Html.TextBoxFor(model => model.EngineerName, new { required = "required" })</p>
     
 
-  <input type="submit" value="Add new engineer"/>
-}
-<br>
-<p>@Html.ActionLink("Show all engineers", "Index")</p>
+    <p>Engineer License Number: @Html.TextBoxFor(model => model.EngineerLicense, new { required = "required" })</p>
+    
+
+    <p>Engineer Specialty: @Html.TextBoxFor(model => model.EngineerSpecialty, new { required = "required" })</p>
+      
+
+    <input type="submit" value="Add new engineer"/>
+  }
+  <br>
+  <p>@Html.ActionLink("Show all engineers", "Index")</p>
+</div>

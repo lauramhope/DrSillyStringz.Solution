@@ -4,18 +4,21 @@
 
 @model Factory.Models.Machine
 
-<h4>Add a new machine</h4>
-<hr />
+<div class="card" style="width: 18rem;">
+  <h4>Add a new machine</h4>
+  <hr />
 
-<p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+  <p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-@using (Html.BeginForm())
-{
-  <p>Machine Name: @Html.TextBoxFor(model => model.MachineName, new { required = "required" })</p>
-  
-  <p>Machine Number: @Html.TextBoxFor(model => model.MachineNumber, new { required = "required" })</p>
+  @using (Html.BeginForm())
+  {
+    <p>Machine Name: @Html.TextBoxFor(model => model.MachineName, new { required = "required" })</p>
     
-  <input type="submit" value="Add new machine"/>
-}
-<br>
-<p>@Html.ActionLink("Show all machines", "Index")</p>
+    <p>Machine Number: @Html.TextBoxFor(model => model.MachineNumber, new { required = "required" })</p>
+      
+    <input type="submit" value="Add new machine"/>
+  }
+  <br>
+  <p>@Html.ActionLink("Show all machines", "Index")</p>
+</div>
+```

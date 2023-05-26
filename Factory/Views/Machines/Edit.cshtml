@@ -4,19 +4,22 @@
 
 @model Factory.Models.Machine
 
-<h4>Edit this machine: @Html.DisplayFor(model => model.MachineName)</h4>
+<div class="card" style="width: 18rem;">
+  <h4>Edit this machine: @Html.DisplayFor(model => model.MachineName)</h4>
 
-<p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+  <p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-<p>@Html.ValidationMessageFor(model => model.MachineNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+  <p>@Html.ValidationMessageFor(model => model.MachineNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
-  <p>Machine Name: @Html.EditorFor(model => model.MachineName)</p>
-  <p>Machine Number:  @Html.EditorFor(model => model.MachineNumber)</p>
-    
-  <input type="submit" value="Save" />
-}
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
+    <p>Machine Name: @Html.EditorFor(model => model.MachineName)</p>
+    <p>Machine Number:  @Html.EditorFor(model => model.MachineNumber)</p>
+      
+    <input type="submit" value="Save" />
+  }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+</div>
+```

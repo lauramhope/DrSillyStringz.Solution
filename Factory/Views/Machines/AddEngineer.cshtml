@@ -4,20 +4,22 @@
 
 @model Factory.Models.Machine
 
-<h2>Add Engineer</h2>
+<div class="card" style="width: 18rem;">
+  <h2>Add Engineer</h2>
 
-<h3>Add an engineer to this machine: @Html.DisplayFor(model => model.MachineName)</h3>
+  <h3>Add an engineer to this machine: @Html.DisplayFor(model => model.MachineName)</h3>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.MachineId)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
 
-  <div class="form-group">
-    @Html.Label("Select an engineer:")
-    @Html.DropDownList("EngineerId")
-  </div>
+    <div class="form-group">
+      @Html.Label("Select an engineer:")
+      @Html.DropDownList("EngineerId")
+    </div>
 
-  <input type="submit" value="Add Engineer" class="btn btn-primary" />
-}
+    <input type="submit" value="Add Engineer" class="btn btn-primary" />
+  }
 
-  @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")
+</div>
