@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@using UniversityRegistrar.Models
-@model UniversityRegistrar.Models.Student
-
+@using Factory.Models
+@model Factory.Models.Engineer
+@* 
 <h2>Student Details</h2>
 <hr />
 <h3>Name: @Html.DisplayFor(model => model.StudentName)</h3>
@@ -29,4 +29,4 @@ else
 <p>@Html.ActionLink("Add a Course for this Student", "AddCourse", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete Student", "Delete", new { id = Model.StudentId })</p>
-<p>@Html.ActionLink("Add new Course", "Create", "Courses")</p>
+<p>@Html.ActionLink("Add new Course", "Create", "Courses")</p> *@

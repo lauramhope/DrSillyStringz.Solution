@@ -2,11 +2,11 @@
   Layout = "_Layout";
 }
 
-@model UniversityRegistrar.Models.Course;
-@using UniversityRegistrar.Models;
+@model Factory.Models.Machine;
+@using Factory.Models;
 @using System.Collections.Generic;
 
-<h2>Course Details</h2>
+@* <h2>Course Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
 <h3>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)</h3>
@@ -30,4 +30,4 @@ else
 <p>@Html.ActionLink("Add a Student for this Course", "AddStudent", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Add new student", "Create", "Students")</p>
+<p>@Html.ActionLink("Add new student", "Create", "Students")</p> *@

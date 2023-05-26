@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model UniversityRegistrar.Models.Student
+@model Factory.Models.Engineer
 
-<h4>Add a new student</h4>
+@* <h4>Add a new student</h4>
 
 <p>@Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 <!-- <p>@Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p> -->
@@ -22,4 +22,4 @@
 
   <input type="submit" value="Add new student" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all Students", "Index")</p>
+<p>@Html.ActionLink("Show all Students", "Index")</p> *@
