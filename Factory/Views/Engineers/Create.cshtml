@@ -4,22 +4,21 @@
 
 @model Factory.Models.Engineer
 
-@* <h4>Add a new student</h4>
+<h4>Add a new engineer</h4>
 
-<p>@Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-<!-- <p>@Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p> -->
+<p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.StudentName)
-  @Html.TextBoxFor(model => model.StudentName)
+  @Html.LabelFor(model => model.EngineerName)
+  @Html.TextBoxFor(model => model.EngineerName)
 
-  @Html.LabelFor(model => model.EnrollmentDate)
-  @Html.TextBoxFor(model => model.EnrollmentDate)
+  @Html.LabelFor(model => model.EngineerLicense)
+  @Html.TextBoxFor(model => model.EngineerLicense)
 
-  <!-- @Html.LabelFor(model => model.CourseId)
-  @Html.DropDownListFor(model => model.CourseId, ViewBag.CourseId as SelectList, "Select a course") -->
+  @Html.LabelFor(model => model.MachineId)
+  @Html.DropDownListFor(model => model.MachineId, ViewBag.MachineId as SelectList, "Select a machine")
 
-  <input type="submit" value="Add new student" class="btn btn-primary" />
+  <input type="submit" value="Add new engineer" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all Students", "Index")</p> *@
+<p>@Html.ActionLink("Show all Engineers", "Index")</p>
