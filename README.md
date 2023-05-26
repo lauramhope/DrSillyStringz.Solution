@@ -48,11 +48,17 @@ $ touch appsettings.json
 ```
 * _Remove the square brackets and replace **USER-ID** and **USER-PW** with your own ID and password_
 * _Navigate to the command line within the "Factory" folder and execute command "dotnet build"_
-* _To update the migrations database, type command "dotnet ef database update"_
+* _To initialize and update the migrations database, type the following commands in the terminal:_
+```
+$ dotnet ef migrations add Initial 
+$ dotnet ef database update
+```
 * _Add the EF Core packages by typing the following into the command line:_
 ```
 $ dotnet add package Microsoft.EntityFrameworkCore -v 6.0.0
 $ dotnet add package Pomelo.EntityFrameworkCore.MySql -v 6.0.0
+$ dotnet tool install --global dotnet-ef --version 6.0.0
+$ dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0
 ```
 * _Return to the command line and type "dotnet watch run" - this should automatically open a browser to the LocalHost:5000 or LocalHost:5001_
 * _This is where you can interact with the application via entering engineers, machines, etc._
