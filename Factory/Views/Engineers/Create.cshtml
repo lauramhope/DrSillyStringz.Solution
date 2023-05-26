@@ -12,10 +12,13 @@
 {
   @Html.LabelFor(model => model.EngineerName)
   @Html.TextBoxFor(model => model.EngineerName)
-
+  
   @Html.LabelFor(model => model.EngineerLicense)
   @Html.TextBoxFor(model => model.EngineerLicense)
-
+ 
+  @Html.LabelFor(model => model.EngineerSpecialty)
+  @Html.TextBoxFor(model => model.EngineerSpecialty)
+ 
   @Html.LabelFor(model => model.MachineId)
   @Html.DropDownListFor(model => model.MachineId, ViewBag.MachineId as SelectList, "Select a machine")
 

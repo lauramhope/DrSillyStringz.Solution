@@ -9,6 +9,8 @@ namespace Factory.Models
 
     public string MachineName { get; set; }
 
+    public int MachineNumber { get; set; }
+
     public List<EngineerMachine> JoinEntities { get; set; }
   }
 }

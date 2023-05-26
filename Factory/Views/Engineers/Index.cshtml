@@ -16,6 +16,7 @@ else
   {
     <h3>@Html.ActionLink($"{engineer.EngineerName}", "Details", new { id = engineer.EngineerId })</h3>
     <p>@engineer.EngineerLicense</p>
+    <p>@engineer.EngineerSpecialty</p>
   }
 }
 <p>@Html.ActionLink("Add new engineer", "Create")</p>

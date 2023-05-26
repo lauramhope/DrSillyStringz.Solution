@@ -12,6 +12,8 @@ namespace Factory.Models
 
     public int EngineerLicense { get; set; }
 
+    public string EngineerSpecialty { get; set; }
+
     public int MachineId { get; set; }
 
     public List<EngineerMachine> JoinEntities { get; set; }

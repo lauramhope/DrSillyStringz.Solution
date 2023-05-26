@@ -8,7 +8,8 @@
 <h2>Engineer Details</h2>
 <hr />
 <h3>Name: @Html.DisplayFor(model => model.EngineerName)</h3>
-<h4>License: @Html.DisplayFor(model => model.EngineerLicense)</h4> 
+<h4>License Number: @Html.DisplayFor(model => model.EngineerLicense)</h4> 
+<h4>Specialty: @Html.DisplayFor(model => model.EngineerSpecialty)</h4>
 
 @if(@Model.JoinEntities.Count == 0)
 {
