@@ -22,77 +22,77 @@ namespace Factory.Controllers
       return View(model);
     }
 
-    // public ActionResult Create()
-    // {
-    //   return View();
-    // }
+    public ActionResult Create()
+    {
+      return View();
+    }
 
-    // [HttpPost]
-    // public ActionResult Create(Course course)
-    // {
-    //   _db.Courses.Add(course);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Create(Machine machine)
+    {
+      _db.Machines.Add(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-    // public ActionResult AddStudent(int id)
-    // {
-    //   Course thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
-    //   ViewBag.StudentId = new SelectList(_db.Students, "StudentId", "StudentName");
-    //   return View(thisCourse);
-    // }
+    public ActionResult AddEngineer(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
+      return View(thisMachine);
+    }
 
-    // [HttpPost]
-    // public ActionResult AddStudent(Course course, int studentId)
-    // {
-    //   #nullable enable
-    //   CourseStudent? joinEntity = _db.CourseStudents.FirstOrDefault(join => (join.CourseId == course.CourseId && join.StudentId == studentId));
-    //   #nullable disable
-    //   if (joinEntity == null && studentId != 0)
-    //   {
-    //     _db.CourseStudents.Add(new CourseStudent() { CourseId = course.CourseId, StudentId = studentId});
-    //     _db.SaveChanges();
-    //   }
-    //   return RedirectToAction("Details", new { id = course.CourseId });
-    // }
+    [HttpPost]
+    public ActionResult AddEngineer(Machine machine, int engineerId)
+    {
+      #nullable enable
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machine.MachineId && join.EngineerId == engineerId));
+      #nullable disable
+      if (joinEntity == null && engineerId != 0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine() { MachineId = machine.MachineId, EngineerId = engineerId});
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = machine.MachineId });
+    }
 
-    // public ActionResult Details(int id)
-    // {
-    //   Course thisCourse = _db.Courses
-    //                           .Include(course => course.JoinEntities)
-    //                           .ThenInclude(join => join.Student)
-    //                           .FirstOrDefault(course => course.CourseId == id);
-    //   return View(thisCourse);
-    // }
+    public ActionResult Details(int id)
+    {
+      Machine thisMachine = _db.Machines
+                              .Include(machine => machine.JoinEntities)
+                              .ThenInclude(join => join.Engineer)
+                              .FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
 
-    // public ActionResult Edit(int id)
-    // {
-    //   Course thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
-    //   ViewBag.StudentId = new SelectList(_db.Students, "StudentId", "StudentName");
-    //   return View(thisCourse);
-    // }
+    public ActionResult Edit(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
+      return View(thisMachine);
+    }
 
-    // [HttpPost]
-    // public ActionResult Edit(Course course)
-    // {
-    //   _db.Courses.Update(course);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Edit(Machine machine)
+    {
+      _db.Machines.Update(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-    // public ActionResult Delete(int id)
-    // {
-    //   Course thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
-    //   return View(thisCourse);
-    // }
+    public ActionResult Delete(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
 
-    // [HttpPost, ActionName("Delete")]
-    // public ActionResult DeleteConfirmed(int id)
-    // {
-    //   Course thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
-    //   _db.Courses.Remove(thisCourse);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      _db.Courses.Remove(thisMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
