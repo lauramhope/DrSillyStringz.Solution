@@ -14,7 +14,7 @@
   {
     <p>Machine Name: @Html.TextBoxFor(model => model.MachineName, new { required = "required" })</p>
     
-    <p>Machine Number: @Html.TextBoxFor(model => model.MachineNumber, new { required = "required" })</p>
+    <p>Machine Number: @Html.TextBoxFor(model => model.MachineNumber, new { @type = "number", required = "required" })</p>
       
     <input type="submit" value="Add new machine"/>
   }

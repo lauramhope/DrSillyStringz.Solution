@@ -18,7 +18,9 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Machine> model = _db.Machines.ToList();
+      List<Machine> model = _db.Machines
+                          .OrderBy(machine => machine.MachineName)
+                          .ToList();
       return View(model);
     }
 
@@ -53,11 +55,11 @@ namespace Factory.Controllers
     public ActionResult AddEngineer(Machine machine, int engineerId)
     {
       #nullable enable
-      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machine.MachineId && join.EngineerId == engineerId));
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.EngineerId == engineerId && join.MachineId == machine.MachineId));
       #nullable disable
       if (joinEntity == null && engineerId != 0)
       {
-        _db.EngineerMachines.Add(new EngineerMachine() { MachineId = machine.MachineId, EngineerId = engineerId});
+        _db.EngineerMachines.Add(new EngineerMachine() { EngineerId = engineerId, MachineId = machine.MachineId});
         _db.SaveChanges();
       }
       return RedirectToAction("Details", new { id = machine.MachineId });
@@ -88,9 +90,9 @@ namespace Factory.Controllers
       }
       else
       {
-        _db.Entry(machine).State = EntityState.Modified;
+        _db.Machines.Update(machine);
         _db.SaveChanges();
-        return RedirectToAction("Index");
+        return RedirectToAction("Details", new { id = machine.MachineId });
       }
     }
 
@@ -105,6 +107,15 @@ namespace Factory.Controllers
     {
       Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       _db.Machines.Remove(thisMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachines.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

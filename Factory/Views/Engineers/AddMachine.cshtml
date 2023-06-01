@@ -7,6 +7,8 @@ Layout = "_Layout";
 <div class="card" style="width: 18rem;" id="views">
   <h2>Add Machine</h2>
 
+  <h4>Add a machine to this engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
+
   @using (Html.BeginForm())
   {
   @Html.HiddenFor(model => model.EngineerId)

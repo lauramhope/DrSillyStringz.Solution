@@ -15,7 +15,7 @@
     <p>Engineer Name: @Html.TextBoxFor(model => model.EngineerName, new { required = "required" })</p>
     
 
-    <p>Engineer License Number: @Html.TextBoxFor(model => model.EngineerLicense, new { required = "required" })</p>
+    <p>Engineer License Number: @Html.TextBoxFor(model => model.EngineerLicense, new { @type = "number", required = "required" })</p>
     
 
     <p>Engineer Specialty: @Html.TextBoxFor(model => model.EngineerSpecialty, new { required = "required" })</p>

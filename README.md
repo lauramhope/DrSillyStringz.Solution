@@ -1,4 +1,4 @@
-# DrSillyStringz.Solution_
+# DrSillyStringz.Solution
 
 #### _MVC web application to manage engineers and machines_
 

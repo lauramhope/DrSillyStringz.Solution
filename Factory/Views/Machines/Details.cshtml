@@ -4,7 +4,6 @@
 
 @model Factory.Models.Machine;
 @using Factory.Models;
-@using System.Collections.Generic;
 
 <div class="card" style="width: 18rem;" id="views">
   <h2>Machine Details</h2>
@@ -22,7 +21,12 @@
     <ul>
     @foreach (EngineerMachine join in Model.JoinEntities)
     {
-      <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId})</li>
+      <li>@join.Engineer.EngineerName</li>
+      @using (Html.BeginForm("DeleteJoin", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Remove engineer from this machine" />
+      }
     }
     </ul>
   }

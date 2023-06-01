@@ -1,6 +1,9 @@
 @{
   Layout = "_Layout";
 }
+
+@using Factory.Models
+
 <div class="container my-5" id="home">
   <h1>Machine Repair Log</h1>
   <h4>Use this application to: </h4>
@@ -17,6 +20,38 @@
   <p><i>Please reach out for further inquiries, thank you!</i></p>
 </div>
 
+<div class="container my-5">
+  <div class="col">
+    <h3>Machines</h3>
+    @if (Model["machines"].Length == 0)
+    {
+      <p>There are no machines in the database.</p>
+    }
+    <ul>
+      @foreach (Machine machine in Model["machines"])
+      {
+        <li>@Html.ActionLink(@machine.MachineName, "Details", "Machines", new { id = @machine.MachineId })</li>
+      }
+    </ul>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="col">
+    <h3>Engineers</h3>
+    @if (Model["engineers"].Length == 0)
+    {
+      <p>There are no engineers in the database.</p>
+    }
+    <ul>
+      @foreach (Engineer engineer in Model["engineers"])
+      {
+        <li>@Html.ActionLink(@engineer.EngineerName, "Details", "Engineers", new { id = @engineer.EngineerId })</li>
+      }
+    </ul>
+  </div>
+</div>
+  
 <div class="container my-5" id="home">
   <h2>DSS: Home Page</h2>
 
