@@ -14,7 +14,7 @@ namespace Factory.Models
     [Required(ErrorMessage = "Engineer speciality can't be left empty")]
     public string EngineerSpecialty { get; set; }
 
-    // public int MachineId { get; set; }
+    public int MachineId { get; set; }
 
     public List<EngineerMachine> JoinEntities { get; set; }
 
